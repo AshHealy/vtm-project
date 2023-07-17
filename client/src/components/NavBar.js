@@ -11,12 +11,26 @@ margin:0;
 padding:1em;
 font-family: 'Courier New', Courier, monospace;
 font-size: large;
+text-decoration: none;
+color: black;
 `
 
 const StyledNavItem = styled.li`
   margin-right: 10px;
   cursor: pointer;
+
 `
+
+const NavbarLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+
+  &:visited {
+    color: red;
+  }
+`;
+
+
 
 
 const NavBar = () => {
@@ -24,9 +38,9 @@ const NavBar = () => {
     return (
 
         <StyledNav>
-            <StyledNavItem><Link to="/">Home</Link></StyledNavItem>
-            <StyledNavItem><Link to="/characters">Characters</Link></StyledNavItem>
-            <StyledNavItem><Link to="/charactercreation">Character Creation</Link></StyledNavItem>
+            <StyledNavItem><NavbarLink to="/">Home</NavbarLink></StyledNavItem>
+            <StyledNavItem><NavbarLink to="/characters">Characters</NavbarLink></StyledNavItem>
+            <StyledNavItem><NavbarLink to="/charactercreation">Character Creation</NavbarLink></StyledNavItem>
         
         </StyledNav>
 

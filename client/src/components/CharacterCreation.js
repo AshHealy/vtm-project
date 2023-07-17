@@ -6,6 +6,11 @@ import DropdownSelect from '../styles/DropdownSelcet.js';
 import DropdownOption from '../styles/DropdownOption.js';
 import StyledInput from '../styles/Input.js';
 import StyledLabel from '../styles/Label.js';
+import StyledLine from '../styles/StyledLine.js';
+import StyledButton from '../styles/StyledButton.js';
+import FormContainer from '../styles/ForumContainer.js';
+import { Form } from 'react-router-dom';
+
 
 const CharacterCreation = () => {
   const [attributes, setAttributes] = useState({});
@@ -28,10 +33,14 @@ const CharacterCreation = () => {
   };
 
   return (
-    <>
+    <FormContainer>
       <Title>Character Creation</Title>
 
-      <form>
+      <StyledLine></StyledLine>
+
+
+
+    <form>
       <div className='characterInfo'>
         <StyledLabel htmlFor="characterName">Character Name:</StyledLabel>
         <StyledInput type="text" id="characterName" />
@@ -95,6 +104,8 @@ const CharacterCreation = () => {
         </DropdownSelect>
         </DropdownContainer>
         </div>
+
+        <StyledLine></StyledLine>
 
         <h3>Attributes</h3>
         <div className='attributes'>
@@ -178,6 +189,8 @@ const CharacterCreation = () => {
             onChange={event => handleAttributeChange(event, 'resolve')}
           />
         </div>
+
+        <StyledLine></StyledLine>
 
         <h3>Skills</h3>
         <div className='skills'>
@@ -338,9 +351,10 @@ const CharacterCreation = () => {
 
         </div>
 
-        <button type="submit">Create Character</button>
+        <StyledButton type="submit">Create Character</StyledButton>
+
       </form>
-    </>
+    </FormContainer>
   );
 };
 
