@@ -9,13 +9,22 @@ import StyledLabel from '../styles/Label.js';
 import StyledLine from '../styles/StyledLine.js';
 import StyledButton from '../styles/StyledButton.js';
 import FormContainer from '../styles/ForumContainer.js';
-import { Form } from 'react-router-dom';
+
 
 
 const CharacterCreation = () => {
+  const [characterInfo, setCharacterInfo] = useState({});
   const [attributes, setAttributes] = useState({});
   const [skills, setSkills] = useState({});
 
+  const handleCharacterInfoChange = (event, field) => {
+    const { value } = event.target;
+    setCharacterInfo(prevCharacterInfo => ({
+      ...prevCharacterInfo,
+      [field]: value,
+    }));
+  };
+ 
   const handleAttributeChange = (event, attribute) => {
     const { value } = event.target;
     setAttributes(prevAttributes => ({
