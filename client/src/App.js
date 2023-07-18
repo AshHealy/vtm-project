@@ -12,7 +12,7 @@ function App() {
 
     <>
 
-      <Title>Vampire The Masquerade V5 Dashboard App</Title>
+      <Title>Vampire The Masquerade V5 Dashboard App 🧛🏼 </Title>
 
       <Router>
           <NavBar/>

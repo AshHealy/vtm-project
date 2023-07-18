@@ -51,11 +51,12 @@ const CharacterCreation = () => {
       ...prevChronicleinfo,
       [chronicleinfo]: value,
     }));
+    console.log(`Updated ${chronicleInfo}: ${value}`);
   }
 
   return (
     <FormContainer>
-      <Title>Character Creation</Title>
+      <Title>Character Creation </Title>
 
       <StyledLine></StyledLine>
 
@@ -413,15 +414,40 @@ const CharacterCreation = () => {
         <h3>Chronicle Info</h3>
         <div className='chronicles'>
 
+        <StyledLabel htmlFor="chronicletenents">Chronicle Tenents:</StyledLabel>
+        <StyledInput
+          type="text"
+          id="tenents"
+          value={chronicleInfo.tenents || ''}
+          onChange={event => handleChronicleInfoChange(event, 'tenents')}
+        />
+
+        <StyledLabel htmlFor="touchstones-convictions">Touchstones & Convictions:</StyledLabel>
+        <StyledInput
+          type="text"
+          id="touchstones"
+          value={chronicleInfo.touchstones || ''}
+          onChange={event => handleChronicleInfoChange(event, 'touchstones')}
+        />
+
+        <StyledLabel htmlFor="clanbane">Clan Bane:</StyledLabel>
+        <StyledInput
+          type="text"
+          id="clanbane"
+          value={chronicleInfo.clanbane || ''}
+          onChange={event => handleChronicleInfoChange(event, 'clanbane')}
+        />
+
+
+
 
         </div>
-
-          
-
 
         </div>
 
         <StyledButton type="submit">Create Character</StyledButton>
+
+
 
       </form>
     </FormContainer>
