@@ -16,6 +16,7 @@ const CharacterCreation = () => {
   const [characterInfo, setCharacterInfo] = useState({});
   const [attributes, setAttributes] = useState({});
   const [skills, setSkills] = useState({});
+  const [chronicleInfo, setChronicle] = useState({});
 
   const handleCharacterInfoChange = (event, field) => {
     const { value } = event.target;
@@ -23,6 +24,7 @@ const CharacterCreation = () => {
       ...prevCharacterInfo,
       [field]: value,
     }));
+    console.log(`Updated ${field}: ${value}`);
   };
  
   const handleAttributeChange = (event, attribute) => {
@@ -31,6 +33,7 @@ const CharacterCreation = () => {
       ...prevAttributes,
       [attribute]: value,
     }));
+    console.log(`Updated ${attribute}: ${value}`);
   };
 
   const handleSkillChange = (event, skill) => {
@@ -39,7 +42,16 @@ const CharacterCreation = () => {
       ...prevSkills,
       [skill]: value,
     }));
+    console.log(`Updated ${skill}: ${value}`);
   };
+
+  const handleChronicleInfoChange = (event, chronicleinfo) => {
+    const { value } = event.target;
+    setChronicle(prevChronicleinfo => ({
+      ...prevChronicleinfo,
+      [chronicleinfo]: value,
+    }));
+  }
 
   return (
     <FormContainer>
@@ -51,27 +63,61 @@ const CharacterCreation = () => {
 
     <form>
       <div className='characterInfo'>
-        <StyledLabel htmlFor="characterName">Character Name:</StyledLabel>
-        <StyledInput type="text" id="characterName" />
+      <StyledLabel htmlFor="characterName">Character Name:</StyledLabel>
+      <StyledInput
+        type="text"
+        id="characterName"
+        value={characterInfo.characterName || ''}
+        onChange={event => handleCharacterInfoChange(event, 'characterName')}/>
 
-        <StyledLabel htmlFor="chronicle">Chronicle:</StyledLabel>
-        <StyledInput type="text" id="chronicle" />
+      <StyledLabel htmlFor="chronicle">Chronicle:</StyledLabel>
+      <StyledInput
+        type="text"
+        id="chronicle"
+        value={characterInfo.chronicle || ''}
+        onChange={event => handleCharacterInfoChange(event, 'chronicle')}
+      />
 
-        <StyledLabel htmlFor="sire">Sire:</StyledLabel>
-        <StyledInput type="text" id="sire" />
+      <StyledLabel htmlFor="sire">Sire:</StyledLabel>
+      <StyledInput
+        type="text"
+        id="sire"
+        value={characterInfo.sire || ''}
+        onChange={event => handleCharacterInfoChange(event, 'sire')}
+      />
 
         <StyledLabel htmlFor="ambition">Ambition:</StyledLabel>
-        <StyledInput type="text" id="ambition" />
+        <StyledInput
+          type="text"
+          id="ambition"
+          value={characterInfo.ambition || ''}
+          onChange={event => handleCharacterInfoChange(event, 'ambition')}
+        />
 
         <StyledLabel htmlFor="concept">Concept:</StyledLabel>
-        <StyledInput type="text" id="concept" />
+        <StyledInput
+          type="text"
+          id="concept"
+          value={characterInfo.concept || ''}
+          onChange={event => handleCharacterInfoChange(event, 'concept')}
+        />
 
         <StyledLabel htmlFor="desire">Desire:</StyledLabel>
-        <StyledInput type="text" id="desire" />
+        <StyledInput
+          type="text"
+          id="desire"
+          value={characterInfo.desire || ''}
+          onChange={event => handleCharacterInfoChange(event, 'desire')}
+        />
 
-        <DropdownContainer>
+
+
+      <DropdownContainer>
         <DropdownLabel htmlFor="clan">Clan:</DropdownLabel>
-        <DropdownSelect id="clan">
+        <DropdownSelect
+          id="clan"
+          value={characterInfo.clan || ''}
+          onChange={event => handleCharacterInfoChange(event, 'clan')}>
             <DropdownOption value="brujah">Brujah</DropdownOption>
             <DropdownOption value="toreador">Toreador</DropdownOption>
             <DropdownOption value="ventrue">Ventrue</DropdownOption>
@@ -93,9 +139,13 @@ const CharacterCreation = () => {
         </DropdownSelect>
         </DropdownContainer>
 
+
         <DropdownContainer>
-        <DropdownLabel htmlFor="predator">Predator:</DropdownLabel>
-        <DropdownSelect id="predator">
+          <DropdownLabel htmlFor="predator">Predator:</DropdownLabel>
+          <DropdownSelect
+            id="predator"
+            value={characterInfo.predator || ''}
+            onChange={event => handleCharacterInfoChange(event, 'predator')}>
             <DropdownOption value="Cleaver">Cleaver</DropdownOption>
             <DropdownOption value="Osiris">Osiris</DropdownOption>
             <DropdownOption value="Sandman">Sandman</DropdownOption>
@@ -354,6 +404,17 @@ const CharacterCreation = () => {
           value={skills.performance || ''}
           onChange={event => handleSkillChange(event, 'performance')}
           />
+
+        {/* <StyledLine></StyledLine>
+        <h3>Chronicle</h3>
+        <div className='chronicles'> */} 
+
+        <StyledLine></StyledLine>
+        <h3>Chronicle Info</h3>
+        <div className='chronicles'>
+
+
+        </div>
 
           
 
