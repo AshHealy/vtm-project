@@ -2,12 +2,10 @@ import styled from 'styled-components';
 
 const FormContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
   justify-content: space-evenly;
-  align-items: center;
-  
 
-   background-color: grey;
 `;
 
 export default FormContainer

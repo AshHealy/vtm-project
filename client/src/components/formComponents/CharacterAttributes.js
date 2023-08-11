@@ -1,34 +1,33 @@
-
-
+import FormContainer from '../../styles/ForumContainer.js';
+import StyledInput from '../../styles/Input.js';
+import StyledLabel from '../../styles/Label.js';
 
 
 
 const CharacterAttributes = ({attributes, handleAttributeChange}) => {
     return (  
     <div>
-        <div className='attributes'>
-          <label htmlFor="strength">Strength</label>
-          <input
+        <FormContainer className='attributes'>
+          <StyledLabel htmlFor="strength">Strength</StyledLabel>
+          <StyledInput
             type="number"
             id="strength"
             min="1"
             max="5"
             value={attributes.strength || ''}
-            onChange={event => handleAttributeChange(event, 'strength')}
-          />
+            onChange={event => handleAttributeChange(event, 'strength')}/>
 
-          <label htmlFor="dexterity">Dexterity</label>
-          <input
+          <StyledLabel htmlFor="dexterity">Dexterity</StyledLabel>
+          <StyledInput
             type="number"
             id="dexterity"
             min="1"
             max="5"
             value={attributes.dexterity || ''}
-            onChange={event => handleAttributeChange(event, 'dexterity')}
-          />
+            onChange={event => handleAttributeChange(event, 'dexterity')}/>
 
-          <label htmlFor="charisma">Charisma</label>
-          <input
+          <StyledLabel htmlFor="charisma">Charisma</StyledLabel>
+          <StyledInput
             type="number"
             id="charisma"
             min="1"
@@ -37,8 +36,8 @@ const CharacterAttributes = ({attributes, handleAttributeChange}) => {
             onChange={event => handleAttributeChange(event, 'charisma')}
           />
 
-          <label htmlFor="manipulation">Manipulation</label>
-          <input
+          <StyledLabel htmlFor="manipulation">Manipulation</StyledLabel>
+          <StyledInput
             type="number"
             id="manipulation"
             min="1"
@@ -47,8 +46,8 @@ const CharacterAttributes = ({attributes, handleAttributeChange}) => {
             onChange={event => handleAttributeChange(event, 'manipulation')}
           />
 
-          <label htmlFor="composure">Composure</label>
-          <input
+          <StyledLabel htmlFor="composure">Composure</StyledLabel>
+          <StyledInput
             type="number"
             id="composure"
             min="1"
@@ -57,36 +56,33 @@ const CharacterAttributes = ({attributes, handleAttributeChange}) => {
             onChange={event => handleAttributeChange(event, 'composure')}
           />
 
-          <label htmlFor="intelligence">Intelligence</label>
-          <input
+          <StyledLabel htmlFor="intelligence">Intelligence</StyledLabel>
+          <StyledInput
             type="number"
             id="intelligence"
             min="1"
             max="5"
             value={attributes.intelligence || ''}
-            onChange={event => handleAttributeChange(event, 'intelligence')}
-          />
+            onChange={event => handleAttributeChange(event, 'intelligence')}/>
 
-          <label htmlFor="wits">Wits</label>
-          <input
+          <StyledLabel htmlFor="wits">Wits</StyledLabel>
+          <StyledInput
             type="number"
             id="wits"
             min="1"
             max="5"
             value={attributes.wits|| ''}
-            onChange={event => handleAttributeChange(event, 'wits')}
-          />
+            onChange={event => handleAttributeChange(event, 'wits')}/>
 
-          <label htmlFor="resolve">Resolve</label>
-          <input
+          <StyledLabel htmlFor="resolve">Resolve</StyledLabel>
+          <StyledInput
             type="number"
             id="resolve"
             min="1"
             max="5"
             value={attributes.resolve || ''}
-            onChange={event => handleAttributeChange(event, 'resolve')}
-          />
-        </div>
+            onChange={event => handleAttributeChange(event, 'resolve')}/>
+        </FormContainer>
     </div>
     );
 }
